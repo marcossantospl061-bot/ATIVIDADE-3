@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Times</title>
+</head>
+<body>
+  <h2>Lista de Times</h2>
+
+  <% if (times.length === 0) { %>
+    <p>Nenhum time cadastrado.</p>
+  <% } else { %>
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Estádio</th>
+        <th>Cidade</th>
+        <th>Ação</th>
+      </tr>
+      <% times.forEach(time => { %>
+        <tr>
+          <td><%= time.id %></td>
+          <td><%= time.nome %></td>
+          <td><%= time.estadio %></td>
+          <td><%= time.cidade %></td>
+          <td><a href="/times/<%= time.id %>">Ver detalhes</a></td>
+        </tr>
+      <% }) %>
+    </table>
+  <% } %>
+
+  <p><a href="/">Voltar ao início</a></p>
+</body>
+</html>
